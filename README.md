@@ -6,7 +6,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://image-uploader.netlify.app/">
+    <a href="https://uploadar.netlify.app/">
       Demo
     </a>
     <span> | </span>
