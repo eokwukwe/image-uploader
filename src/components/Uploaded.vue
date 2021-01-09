@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="uploadStore.isUploaded"
-    class="bg-white width height rounded-xl shadow-lg px-7 py-8 dark:bg-gray-900"
+    class="bg-white w-84 md:w-96 h-auto rounded-xl shadow-lg px-7 py-8 dark:bg-gray-900"
   >
     <div class="flex justify-center">
       <svg

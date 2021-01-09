@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="uploadStore.isLoading"
-    class="bg-white width h-36 rounded-lg shadow-lg px-8 py-8 dark:bg-gray-900"
+    class="bg-white w-84 md:w-96 h-auto rounded-lg shadow-lg px-8 py-8 dark:bg-gray-900"
   >
     <h2 class="text-gray-600 text-xl font-semibold mb-5 dark:text-gray-400">
       Uploading...

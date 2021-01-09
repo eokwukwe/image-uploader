@@ -24,8 +24,6 @@ async function uploadImage() {
 
     const { data } = await axios.post(cloudinaryUploadUrl, state.formData)
 
-    console.log(data);
-
     state.url = data.url
 
     state.secureUrl = data.secure_url

@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="!uploadStore.isUploaded && !uploadStore.isLoading"
-    class="bg-white width height rounded-xl shadow-lg px-7 py-8 dark:bg-gray-900"
+    class="bg-white w-84 md:w-96 h-auto rounded-xl shadow-lg px-7 py-8 dark:bg-gray-900"
   >
     <h2
       class="text-gray-600 text-xl text-center font-semibold dark:text-gray-400"
@@ -54,9 +54,6 @@
 </template>
 
 <script>
-import axios from "axios";
-import { onMounted, reactive } from "vue";
-
 import uploadStore from "../composables/uploadStore";
 
 export default {
@@ -65,12 +62,12 @@ export default {
   setup() {
     const highlightDrop = () => {
       let dropZone = document.querySelector("#drop-zone");
-      dropZone.classList.add("highlight-drop");
+      dropZone.classList.add("highlight");
     };
 
     const unHighlightDrop = () => {
       let dropZone = document.querySelector("#drop-zone");
-      dropZone.classList.remove("highlight-drop");
+      dropZone.classList.remove("highlight");
     };
 
     return {
@@ -103,7 +100,7 @@ export default {
 </script>
 
 <style scoped>
-  .highlight-drop {
+  .highlight {
     @apply border-blue-500 dark:border-blue-900 dark:bg-gray-700;
   }
 </style>
