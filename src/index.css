@@ -1,0 +1,10 @@
+/*! @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .highlight {
+    @apply border-4 border-blue-500 dark:border-blue-900;
+  }
+}
