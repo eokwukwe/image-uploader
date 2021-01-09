@@ -1,5 +1,8 @@
 <template>
-  <div class="bg-white width height rounded-xl shadow-lg px-7 py-8 dark:bg-gray-900">
+  <div
+    v-show="uploadStore.isUploaded"
+    class="bg-white width height rounded-xl shadow-lg px-7 py-8 dark:bg-gray-900"
+  >
     <div class="flex justify-center">
       <svg
         viewBox="0 0 20 20"
@@ -14,7 +17,9 @@
       </svg>
     </div>
 
-    <h2 class="text-gray-600 text-xl text-center font-semibold mt-3 mb-7 dark:text-gray-400">
+    <h2
+      class="text-gray-600 text-xl text-center font-semibold mt-3 mb-7 dark:text-gray-400"
+    >
       Uploaded Successfully!
     </h2>
 
@@ -25,7 +30,7 @@
     >
       <img
         class="h-full w-full object-cover rounded-xl"
-        src="../assets/images/upload.jpg"
+        :src="isHttps ? uploadStore.secureURL : uploadStore.unSecureURL"
         alt="upload image"
       />
     </div>
@@ -33,7 +38,7 @@
     <div class="mt-5 relative" action="">
       <input
         type="text"
-        value="https://github.com/eokwukwe"
+        :value="isHttps ? uploadStore.secureURL : uploadStore.unSecureURL"
         id="uploadedLink"
         class="text-xs bg-gray-100 py-2 pl-2 rounded-lg border border-gray-300 w-full focus:outline-none dark:bg-gray-800 dark:text-gray-500 dark:border-gray-900"
       />
@@ -48,6 +53,9 @@
 </template>
 
 <script>
+import { computed } from "vue";
+import uploadStore from "../composables/uploadStore";
+
 export default {
   name: "Uploaded",
 
@@ -62,8 +70,14 @@ export default {
       document.execCommand("copy");
     };
 
+    const isHttps = computed(() => {
+      return window.location.protocol === "https:";
+    });
+
     return {
+      isHttps,
       copyLink,
+      uploadStore,
     };
   },
 };

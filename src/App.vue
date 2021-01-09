@@ -1,10 +1,12 @@
 <template>
   <div
-    class="h-screen flex justify-center items-center bg-gray-100 dark:bg-gray-800"
+    class="min-h-screen flex justify-center items-center bg-gray-100 dark:bg-gray-800"
   >
-    <image-uploader></image-uploader>
-    <!-- <uploaded></uploaded> -->
-    <!-- <upload-progress></upload-progress> -->
+    <div>
+      <image-uploader></image-uploader>
+      <upload-progress></upload-progress>
+      <uploaded></uploaded>
+    </div>
   </div>
 </template>
 

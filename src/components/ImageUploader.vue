@@ -1,5 +1,6 @@
 <template>
   <div
+    v-show="!uploadStore.isUploaded && !uploadStore.isLoading"
     class="bg-white width height rounded-xl shadow-lg px-7 py-8 dark:bg-gray-900"
   >
     <h2
@@ -17,7 +18,7 @@
       class="bg-gray-100 w-drop h-56 mx-auto rounded-xl border-dashed border-2 border-blue-300 mb-4 dark:bg-gray-800 dark:border-gray-400"
       id="drop-zone"
       v-cloak
-      @drop.prevent="addFile"
+      @drop.prevent="dropImage"
       @dragover.prevent="highlightDrop"
       @dragleave.prevent="unHighlightDrop"
     >
@@ -33,7 +34,13 @@
     <div class="text-center text-gray-400 text-xs dark:text-gray-500">Or</div>
 
     <form class="mt-5" action="">
-      <input hidden type="file" name="" id="upload" />
+      <input
+        @change="handleFileChange($event)"
+        hidden
+        type="file"
+        name="image"
+        id="upload"
+      />
       <div class="flex justify-center">
         <label
           class="cursor-pointer text-white bg-blue-500 text-xs px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 dark:bg-blue-900 dark:text-gray-400"
@@ -47,7 +54,11 @@
 </template>
 
 <script>
-import { onMounted } from "vue";
+import axios from "axios";
+import { onMounted, reactive } from "vue";
+
+import uploadStore from "../composables/uploadStore";
+
 export default {
   name: "ImageUploader",
 
@@ -62,18 +73,31 @@ export default {
       dropZone.classList.remove("highlight-drop");
     };
 
-    const addFile = (e) => {
-      unHighlightDrop();
-      let file = e.dataTransfer.files[0];
-
-      console.log(file);
-    };
-
     return {
-      addFile,
+      uploadStore,
       highlightDrop,
       unHighlightDrop,
     };
+  },
+
+  methods: {
+    dropImage: function (e) {
+      this.unHighlightDrop();
+
+      const file = e.dataTransfer.files[0];
+
+      this.uploadStore.setFormData(file);
+
+      this.uploadStore.uploadImage();
+    },
+
+    handleFileChange: function (e) {
+      const file = e.target.files[0];
+
+      this.uploadStore.setFormData(file);
+
+      this.uploadStore.uploadImage();
+    },
   },
 };
 </script>
