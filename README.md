@@ -29,6 +29,17 @@
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
 
+
+## Overview
+
+![upload](https://res.cloudinary.com/fcode/image/upload/v1610224950/devchallenges-one/shot-two_fz7ywe.png)
+
+![uploaded](https://res.cloudinary.com/fcode/image/upload/v1610224909/devchallenges-one/shot-one_wqioc2.png)
+
+The app uses the system's setting to show dark or light mode.
+
+
+
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
