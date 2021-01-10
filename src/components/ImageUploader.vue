@@ -43,7 +43,7 @@
       />
       <div class="flex justify-center">
         <label
-          class="cursor-pointer text-white bg-blue-500 text-xs px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 dark:bg-blue-900 dark:text-gray-400"
+          class="cursor-pointer text-white bg-blue-500 text-xs px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 dark:bg-blue-900 dark:hover:bg-blue-800 dark:text-gray-400"
           for="upload"
         >
           Choose a file

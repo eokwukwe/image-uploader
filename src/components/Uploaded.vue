@@ -44,7 +44,7 @@
       />
       <button
         @click="copyLink"
-        class="cursor-pointer text-white bg-blue-500 text-xs px-4 py-2 rounded-lg absolute right-0 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 dark:bg-blue-900 dark:text-gray-400"
+        class="cursor-pointer text-white bg-blue-500 text-xs px-4 py-2 rounded-lg absolute right-0 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 dark:bg-blue-900 dark:text-gray-400 dark:hover:bg-blue-800"
       >
         Copy link
       </button>
