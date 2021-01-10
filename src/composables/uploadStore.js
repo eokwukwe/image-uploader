@@ -8,7 +8,7 @@ const state = reactive({
   formData: '',
   secureUrl: '',
   loading: false,
-  uploaded: false, 
+  uploaded: false
 })
 
 function setFormData(uploadedImage) {
@@ -35,6 +35,11 @@ async function uploadImage() {
   }
 }
 
+function backToUpload() {
+  state.uploaded = false
+  state.loading = false
+}
+
 const unSecureURL = computed(() => state.url)
 const isLoading = computed(() => state.loading)
 const secureURL = computed(() => state.secureUrl)
@@ -47,7 +52,8 @@ const uploadStore = readonly({
   isUploaded,
   unSecureURL,
   setFormData,
-  uploadImage
+  uploadImage,
+  backToUpload
 })
 
 export default uploadStore

@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="uploadStore.isUploaded"
-    class="bg-white w-84 md:w-96 h-auto rounded-xl shadow-lg px-7 py-8 dark:bg-gray-900"
+    class="bg-white w-84 md:w-96 h-auto rounded-xl shadow-lg px-7 pt-8 pb-4 dark:bg-gray-900"
   >
     <div class="flex justify-center">
       <svg
@@ -47,6 +47,15 @@
         class="cursor-pointer text-white bg-blue-500 text-xs px-4 py-2 rounded-lg absolute right-0 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 dark:bg-blue-900 dark:text-gray-400"
       >
         Copy link
+      </button>
+    </div>
+
+    <div class="flex justify-center mt-6">
+      <button
+        @click="uploadStore.backToUpload"
+        class="flex items-center justify-center cursor-pointer text-white bg-green-700 text-xs px-2 py-1 rounded-md hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 dark:bg-green-900 dark:text-gray-400"
+      >
+        Back to Upload
       </button>
     </div>
   </div>
